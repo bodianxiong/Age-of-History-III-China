@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文明战略游戏开发公告</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f0f0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(45deg, #e8e8e8 25%, transparent 25%),
+                            linear-gradient(-45deg, #e8e8e8 25%, transparent 25%),
+                            linear-gradient(45deg, transparent 75%, #e8e8e8 75%),
+                            linear-gradient(-45deg, transparent 75%, #e8e8e8 75%);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .qrcode-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .qrcode-text {
+            color: #666;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .qq-group {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .qq-group:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .qq-group::after {
+            content: "点击复制";
+            font-size: 0.8rem;
+            margin-left: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .qq-group { padding: 0.6rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>文明时代·中国版</h1>
+        
+        <div class="qrcode-section">
+            <div class="qq-group" onclick="copyGroupNumber()">
+                QQ交流群：858674517
+            </div>
+            <p class="qrcode-text">扫一扫二维码，加入群聊</p>
+        </div>
+    </div>
+
+    <script>
+        function copyGroupNumber() {
+            const el = document.createElement('textarea');
+            el.value = '858674517';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert('群号已复制到剪贴板');
+        }
+    </script>
+</body>
+</html>
